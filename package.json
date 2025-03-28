@@ -1,0 +1,16 @@
+{
+  "name": "zmqmt5server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node .\\index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "https": "^1.0.0",
+    "ws": "^8.18.0",
+    "zeromq": "^6.3.0"
+  }
+}

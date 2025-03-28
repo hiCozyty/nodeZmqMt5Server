@@ -1,0 +1,51 @@
+
+todo for today
+just port over all the metrics logic from backend to use zmq
+port over the client side logic 
+work on fe client implement live data from mt5 
+implement the vwap listener on the server side not the client side. dont use fetch just use listener from the other server..
+implement above features
+
+add a cached search engine for tickers (convert mcf format to cex format)
+add stop loss line => position sizer (single line)
+add buy/sell button
+add pVwap sVwap button
+add measuring tool
+add x button for closing the chart div..
+add risk$ and lot size input boxes on bottom next to buy sell buttons
+add telegram alert button
+add button for horizontal line 
+add bid/ask line(done)
+add maybe where position entered and closed along with diagonal line inbetween them??? (gonna take a bit of time...) 
+button for market vs limit order
+
+tp sl module from existing entry order(initited by touching the ongoing order line)
+for now.. just make a very simple sltp module by clicking close to the price point in the chart to bolden the line to activate and tap again to deactivate. to tp/sl set, just draw across prices and release to set
+
+
+
+for the zmq client class, i dont really need to expose the class data except for communicating with the ws client..
+
+
+for metrics...
+order of operations... relay server initiates
+SEND ONE TIME
+send 15 candles for atr calculation 1 time
+send historical spread last 10sec 1 time
+
+//every 10 seconds, query...
+historical spread last 10 seconds
+most up to date kline obj 
+
+
+for live data relaying to fe client... 
+when 3m elapses, then send the processed metrics on an interval to fe client
+
+then client can choose ticker name from the list...
+
+client initiates with ticker name...
+query last 1000 candles with specified tf one time
+send the ticker spec data one time
+subscribe and relay tick data (contains both bid/ask and kline)
+
+metrics tab (bar graph comparison icon) / chart tab (chart icon) / pnl tab(dollar sign)
